@@ -11,15 +11,17 @@ public class Index {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long id;
-    public String region;
+    public int level;
+    public String name;
     public Double index;
 
     public Index() {
     }
 
-    public Index(long id, String region, Double index) {
+    public Index(long id, int level, String name, Double index) {
         this.id = id;
-        this.region = region;
+        this.level = level;
+        this.name = name;
         this.index = index;
     }
 
@@ -31,12 +33,20 @@ public class Index {
         this.id = id;
     }
 
-    public String getRegion() {
-        return region;
+    public int getLevel() {
+        return level;
     }
 
-    public void setRegion(String region) {
-        this.region = region;
+    public void setLevel(int level) {
+        this.level = level;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Double getIndex() {
@@ -51,7 +61,8 @@ public class Index {
     public String toString() {
         return "Index{" +
                 "id=" + id +
-                ", region='" + region + '\'' +
+                ", level=" + level +
+                ", name='" + name + '\'' +
                 ", index=" + index +
                 '}';
     }
